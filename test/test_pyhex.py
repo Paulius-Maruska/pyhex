@@ -97,16 +97,16 @@ class TestPyHexFormat(unittest.TestCase):
             safe1=pyhex.helper.safe_string(string1, '.')
         )
 
-        self.assertEqual(expected, ''.join(pyhex.pyhex_format(string, 0)))
+        self.assertEqual(expected, ''.join(pyhex.pyhex_format(string, 0, True)))
 
-        expected = '0000000020: {hex0:<50} {safe0}\n0000000030: {hex1:<50} {safe1}\n'.format(
+        expected = '0000000020: {hex0:<50} {safe0}0000000030: {hex1:<50} {safe1}'.format(
             hex0=pyhex.helper.hex_string(string0, ' ', ' | ', 8),
             safe0=pyhex.helper.safe_string(string0, '.'),
             hex1=pyhex.helper.hex_string(string1, ' ', ' | ', 8),
             safe1=pyhex.helper.safe_string(string1, '.')
         )
 
-        self.assertEqual(expected, ''.join(pyhex.pyhex_format(string, 32)))
+        self.assertEqual(expected, ''.join(pyhex.pyhex_format(string, 32, False)))
 
     def test_raises_when_string_parameter_is_not_a_str(self):
         with self.assertRaises(TypeError):
@@ -129,7 +129,4 @@ class TestPyHexFormatStream(unittest.TestCase):
         string = 'Lobster ALL the Fetish!?'
         stream = StringIO.StringIO(string)
 
-        expected = ''.join(pyhex.pyhex_format(string, 0))
-        actual = ''.join(pyhex.pyhex_format_stream(stream))
-
-        self.assertEqual(expected, actual)
+        self.assertEqual(list(pyhex.pyhex_format(string, 0)), list(pyhex.pyhex_format_stream(stream)))
