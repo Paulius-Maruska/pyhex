@@ -1,13 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Copyright (c) 2013 Paulius Maruška
-from distutils.core import setup
+from setuptools import setup
 
 setup(name='pyhex',
-      version='0.1.0',
+      version='0.2.0',
       description='Python Hexadecimal Converter and Viewer',
       long_description='Python Hexadecimal Converter and Viewer',
-      classifiers=['Development Status :: 3 - Alpha',
+      classifiers=['Development Status :: 4 - Beta',
                    'Environment :: Console',
                    'Intended Audience :: Developers',
                    'Intended Audience :: System Administrators',
