@@ -90,14 +90,14 @@ class TestPyHexFormat(unittest.TestCase):
         string = 'Lobster ALL the Fetish!?'
 
         string0, string1 = pyhex.helper.split_string(string, 16)
-        expected = '0000000000: {hex0:<50} {safe0}\n0000000010: {hex1:<50} {safe1}\n'.format(
+        expected = '0000000000: {hex0:<50} {safe0}\n0000000010: {hex1:<50} {safe1}'.format(
             hex0=pyhex.helper.hex_string(string0, ' ', ' | ', 8),
             safe0=pyhex.helper.safe_string(string0, '.'),
             hex1=pyhex.helper.hex_string(string1, ' ', ' | ', 8),
             safe1=pyhex.helper.safe_string(string1, '.')
         )
 
-        self.assertEqual(expected, ''.join(pyhex.pyhex_format(string, 0, True)))
+        self.assertEqual(expected, '\n'.join(pyhex.pyhex_format(string, 0)))
 
         expected = '0000000020: {hex0:<50} {safe0}0000000030: {hex1:<50} {safe1}'.format(
             hex0=pyhex.helper.hex_string(string0, ' ', ' | ', 8),
@@ -106,7 +106,7 @@ class TestPyHexFormat(unittest.TestCase):
             safe1=pyhex.helper.safe_string(string1, '.')
         )
 
-        self.assertEqual(expected, ''.join(pyhex.pyhex_format(string, 32, False)))
+        self.assertEqual(expected, ''.join(pyhex.pyhex_format(string, 32)))
 
     def test_raises_when_string_parameter_is_not_a_str(self):
         with self.assertRaises(TypeError):
