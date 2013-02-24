@@ -10,7 +10,7 @@ Converting a string:
     from pyhex import pyhex_format
 
     string = "Lobster ALL the Fetish!?"
-    hex = "".join(pyhex_format(string, 0))
+    hex = "\n".join(pyhex_format(string, 0))
     print hex
 
 Output:
