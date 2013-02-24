@@ -11,6 +11,17 @@ PyHexView
 Command-Line utility script, that prints contents of a file or whatever is read from the standard input formated as
 hexview.
 
+How to Install
+==============
+
+PyHex and PyHexView (single package) is on [PyPi](https://pypi.python.org/pypi/pyhex/), so you can simply run:
+
+    easy_install pyhex
+
+Depending on your platform, you might need to run:
+
+    sudo easy_install pyhex
+
 Code Examples for Format Functions
 ==================================
 
