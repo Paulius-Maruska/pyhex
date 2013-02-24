@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+# Copyright (c) 2013 Paulius Maruška
 from optparse import OptionParser
 from sys import stdin, stdout
 from pyhex import pyhex_write_stream
