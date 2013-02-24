@@ -12,17 +12,17 @@ def pyhex_format(string, start_address):
     :return: yields individual lines.
     """
     if not isinstance(string, str):
-        raise TypeError('string parameter must be an instance of str')
+        raise TypeError("string parameter must be an instance of str")
     if not isinstance(start_address, int):
-        raise TypeError('start_address parameter must be an instance of int')
+        raise TypeError("start_address parameter must be an instance of int")
     if start_address % 16 != 0:
-        raise ValueError('start_address parameter must be a multiple of 16')
+        raise ValueError("start_address parameter must be a multiple of 16")
 
     for index, row in enumerate(split_string(string, 16)):
-        yield '{address:010x}: {hex:<50} {safe}'.format(
+        yield "{address:010x}: {hex:<50} {safe}".format(
             address=start_address + 16 * index,
-            hex=hex_string(row, ' ', ' | ', 8),
-            safe=safe_string(row, '.')
+            hex=hex_string(row, " ", " | ", 8),
+            safe=safe_string(row, ".")
         )
 
 
