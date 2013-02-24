@@ -92,7 +92,7 @@ Examples of pyhexview.py Usage
 
 View .gitattributes code formatted as hexview:
 
-    $> python pyhexview.py -f .gitattributes
+    $> python pyhexview.py -i .gitattributes
     0000000000: 23 20 41 75 74 6f 20 64 | 65 74 65 63 74 20 74 65  # Auto detect te
     0000000010: 78 74 20 66 69 6c 65 73 | 20 61 6e 64 20 70 65 72  xt files and per
     0000000020: 66 6f 72 6d 20 4c 46 20 | 6e 6f 72 6d 61 6c 69 7a  form LF normaliz
@@ -141,3 +141,4 @@ Same as before, but read it from standard input:
     0000000130: 3d 61 73 74 65 78 74 70 | 6c 61 69 6e 0d 0a 2a 2e  =astextplain..*.
     0000000140: 52 54 46 09 20 64 69 66 | 66 3d 61 73 74 65 78 74  RTF. diff=astext
     0000000150: 70 6c 61 69 6e 0d 0a                               plain..
+
