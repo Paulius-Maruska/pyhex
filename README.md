@@ -3,8 +3,8 @@ PyHex
 
 Python package for easy printing of strings as hexview strings
 
-Examples
-========
+Code Examples
+=============
 Converting a string:
 
     from pyhex import pyhex_format

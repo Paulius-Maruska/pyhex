@@ -9,6 +9,7 @@ def pyhex_format(string, start_address, include_new_line=False):
 
     :param string: string to be represented in hexview format.
     :param start_address: integer representing a starting address.
+    :param include_new_line: boolean flag that indicates whether to include '\n' at the end of each line.
     :return: yields individual lines.
     """
     if not isinstance(string, str):
@@ -28,6 +29,12 @@ def pyhex_format(string, start_address, include_new_line=False):
 
 
 def pyhex_format_stream(stream, include_new_line=False):
+    """
+    Generator function that yields individual lines formated as hexview lines.
+    :param stream: stream to read original bytes from (should be opened as binary).
+    :param include_new_line: boolean flag that indicates whether to include '\n' at the end of each line.
+    :return: yields individual lines.
+    """
     address = 0
     size = 16 * 100
     while True:
