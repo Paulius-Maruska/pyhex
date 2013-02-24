@@ -40,6 +40,8 @@ def pyhex_format_stream(stream):
         if chunk is not None and len(chunk) > 0:
             for row in pyhex_format(chunk, address):
                 yield row
+            if len(chunk) < size:
+                break
         else:
             break
         address += size
