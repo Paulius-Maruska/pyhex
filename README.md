@@ -1,7 +1,7 @@
 PyHex
 =====
 
-[![Build Status](https://travis-ci.org/Paulius-Maruska/pyhex.png)](https://travis-ci.org/Paulius-Maruska/pyhex)
+[![Build Status](https://travis-ci.org/Paulius-Maruska/pyhex.png?branch=master)](https://travis-ci.org/Paulius-Maruska/pyhex)
 
 Python package for easy printing of strings as hexview strings.
 
