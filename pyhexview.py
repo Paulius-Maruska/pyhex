@@ -27,8 +27,9 @@ def main():
     if options.output_file is not None:
         output_stream = open(options.output_file, "w")
 
-    with input_stream, output_stream:
-        pyhex_write_stream(input_stream, output_stream)
+    with input_stream:
+        with output_stream:
+            pyhex_write_stream(input_stream, output_stream)
 
 
 if __name__ == "__main__":

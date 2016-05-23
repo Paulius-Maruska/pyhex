@@ -1,15 +1,17 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# Copyright (c) 2013 Paulius Maruška
+try:
+    import io
+except ImportError:
+    import StringIO as io
 import unittest
-import StringIO
+
 import pyhex
 
 
 class TestPyHexWrite(unittest.TestCase):
     def test_writes_to_stream_correctly(self):
         string = "Lobster ALL the Fetish!?"
-        stream = StringIO.StringIO()
+        stream = io.StringIO()
 
         expected = "\n".join(pyhex.pyhex_format(string, 0)) + "\n"
 
@@ -22,8 +24,8 @@ class TestPyHexWrite(unittest.TestCase):
 class TestPyHexWriteStream(unittest.TestCase):
     def test_writes_to_stream_correctly(self):
         string = "Lobster ALL the Fetish!?"
-        stream_input = StringIO.StringIO(string)
-        stream_output = StringIO.StringIO()
+        stream_input = io.StringIO(string)
+        stream_output = io.StringIO()
 
         expected = "\n".join(pyhex.pyhex_format_stream(stream_input)) + "\n"
         stream_input.seek(0)

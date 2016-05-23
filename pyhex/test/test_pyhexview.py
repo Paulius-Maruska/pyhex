@@ -1,9 +1,7 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# Copyright (c) 2013 Paulius Maruška
 import unittest
-from os import remove
-from subprocess import call
+import os
+import subprocess
 import pyhex
 
 
@@ -17,13 +15,13 @@ class TestPyHexView(unittest.TestCase):
             output_stream.write(self.text)
 
     def tearDown(self):
-        remove(self.input_file)
-        remove(self.output_file)
+        os.remove(self.input_file)
+        os.remove(self.output_file)
 
     def test_prints_hexview_correctly_with_io_options(self):
         expected = "\n".join(pyhex.pyhex_format(self.text, 0)) + "\n"
 
-        process = call(["python", "pyhexview.py", "-i", self.input_file, "-o", self.output_file])
+        process = subprocess.call(["python", "pyhexview.py", "-i", self.input_file, "-o", self.output_file])
 
         with open(self.output_file, "r") as input_stream:
             output_text = ''.join(input_stream.readlines())

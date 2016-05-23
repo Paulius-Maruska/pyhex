@@ -1,9 +1,12 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# Copyright (c) 2013 Paulius Maruška
+try:
+    import io
+except ImportError:
+    import StringIO as io
 import unittest
-import StringIO
+
 import pyhex
+import pyhex.helper
 
 
 class TestPyHexFormat(unittest.TestCase):
@@ -47,7 +50,7 @@ class TestPyHexFormat(unittest.TestCase):
 
 class TestPyHexFormatStream(unittest.TestCase):
     def test_formats_correctly(self):
-        string = "Lobster ALL the Fetish!?"
-        stream = StringIO.StringIO(string)
+        string = u"Lobster ALL the Fetish!?"
+        stream = io.StringIO(string)
 
         self.assertEqual(list(pyhex.pyhex_format(string, 0)), list(pyhex.pyhex_format_stream(stream)))

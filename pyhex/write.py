@@ -1,7 +1,5 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# Copyright (c) 2013 Paulius Maruška
-from format import pyhex_format, pyhex_format_stream
+from .format import pyhex_format, pyhex_format_stream
 
 
 def pyhex_write(string, start_address, output_stream):

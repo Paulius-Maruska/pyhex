@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# Copyright (c) 2013 Paulius Maruška
 
 
 def split_string(string, chunk_size):
@@ -63,5 +61,5 @@ def safe_string(string, safe_char):
     if len(safe_char) != 1:
         raise ValueError("safe_char length must be 1")
 
-    unsafe_char_codes = range(0, 32) + [127]
+    unsafe_char_codes = list(range(0, 32)) + [127]
     return "".join([char if ord(char) not in unsafe_char_codes else safe_char for char in string])

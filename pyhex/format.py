@@ -1,7 +1,5 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# Copyright (c) 2013 Paulius Maruška
-from helper import split_string, hex_string, safe_string
+from .helper import split_string, hex_string, safe_string
 
 
 def pyhex_format(string, start_address):

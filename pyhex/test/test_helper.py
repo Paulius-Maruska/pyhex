@@ -1,8 +1,6 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# Copyright (c) 2013 Paulius Maruška
 import unittest
-import pyhex
+import pyhex.helper
 
 
 class TestSplitString(unittest.TestCase):
