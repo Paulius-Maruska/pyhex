@@ -22,6 +22,8 @@ matrix:
       env: TOX_ENV=check-py36,test-py36,coveralls
 
 install:
+  - env | sort
+  - ll ~/virtualenv
   - pip install --upgrade pip setuptools tox
 
 script:
