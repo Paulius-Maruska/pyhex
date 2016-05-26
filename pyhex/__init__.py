@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
-from .pyhex import write, format
+from .hexview import HexView
+from .pyhex import from_stream, from_buffer, format_stream, format_buffer, format_file
 
 __all__ = [
-    "write",
-    "format",
+    "HexView",
+    "from_stream",
+    "from_buffer",
+    "format_stream",
+    "format_buffer",
+    "format_file",
 ]
