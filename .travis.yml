@@ -5,21 +5,21 @@ language: python
 matrix:
   include:
     - python: 2.6.9
-      env: TOX_ENV=check-py26,test-py26,coveralls
+      env: TOX_ENV=check-py26,test-py26,coveralls-py26
     - python: 2.7.11
-      env: TOX_ENV=check-py27,test-py27,coveralls
-    - python: pypy-5.1.1
-      env: TOX_ENV=check-pypy,test-pypy,coveralls
+      env: TOX_ENV=check-py27,test-py27,coveralls-py27
+    - python: pypy-5.0
+      env: TOX_ENV=check-pypy,test-pypy,coveralls-pypy
     - python: pypy3-2.4.0
-      env: TOX_ENV=check-pypy3,test-pypy3,coveralls
+      env: TOX_ENV=check-pypy3,test-pypy3,coveralls-pypy3
     - python: 3.3.6
-      env: TOX_ENV=check-py33,test-py33,coveralls
+      env: TOX_ENV=check-py33,test-py33,coveralls-py33
     - python: 3.4.4
-      env: TOX_ENV=check-py34,test-py34,coveralls
+      env: TOX_ENV=check-py34,test-py34,coveralls-py34
     - python: 3.5.1
-      env: TOX_ENV=check-py35,test-py35,coveralls
+      env: TOX_ENV=check-py35,test-py35,coveralls-py35
     - python: 3.6-dev
-      env: TOX_ENV=check-py36,test-py36,coveralls
+      env: TOX_ENV=check-py36,test-py36,coveralls-py36
 
 install:
   - env | sort
