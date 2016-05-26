@@ -1,6 +1,28 @@
+sudo: false
+
 language: python
 
-python:
-  - "2.7"
+matrix:
+  include:
+    - python: 2.6
+      env: TOX_ENV=check-py26,test-py26,coveralls
+    - python: 2.7
+      env: TOX_ENV=check-py27,test-py27,coveralls
+    - python: pypy
+      env: TOX_ENV=check-pypy,test-pypy,coveralls
+    - python: 3.3
+      env: TOX_ENV=check-py33,test-py33,coveralls
+    - python: 3.4
+      env: TOX_ENV=check-py34,test-py34,coveralls
+    - python: 3.5
+      env: TOX_ENV=check-py35,test-py35,coveralls
+    - python: 3.6
+      env: TOX_ENV=check-py36,test-py36,coveralls
+    - python: pypy3
+      env: TOX_ENV=check-pypy3,test-pypy3,coveralls
 
-script: nosetests
+install:
+  - pip install --upgrade pip setuptools tox
+
+script:
+  - tox -e $TOX_ENV
