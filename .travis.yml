@@ -23,7 +23,7 @@ matrix:
 
 install:
   - env | sort
-  - ll ~/virtualenv
+  - ls -alF ~/virtualenv
   - pip install --upgrade pip setuptools tox
 
 script:
