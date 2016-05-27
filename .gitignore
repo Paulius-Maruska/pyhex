@@ -2,7 +2,7 @@
 
 # Packages
 *.egg-info
-sdist
+dist
 .installed.cfg
 MANIFEST
 

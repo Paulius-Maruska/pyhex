@@ -5,26 +5,28 @@ language: python
 matrix:
   include:
     - python: pypy
-      env: TOX_ENV=check-pypy,test-pypy,coveralls-pypy
+      env: TOX_ENV=pypy-check,pypy-test,coverage
     - python: pypy3
-      env: TOX_ENV=check-pypy3,test-pypy3,coveralls-pypy3
+      env: TOX_ENV=pypy3-check,pypy3-test,coverage
     - python: 2.6.9
-      env: TOX_ENV=check-py26,test-py26,coveralls-py26
+      env: TOX_ENV=py26-check,py26-test,coverage
     - python: 2.7.11
-      env: TOX_ENV=check-py27,test-py27,coveralls-py27
+      env: TOX_ENV=py27-check,py27-test,coverage
     - python: 3.3.6
-      env: TOX_ENV=check-py33,test-py33,coveralls-py33
+      env: TOX_ENV=py33-check,py33-test,coverage
     - python: 3.4.4
-      env: TOX_ENV=check-py34,test-py34,coveralls-py34
+      env: TOX_ENV=py34-check,py34-test,coverage
     - python: 3.5.1
-      env: TOX_ENV=check-py35,test-py35,coveralls-py35
+      env: TOX_ENV=py35-check,py35-test,coverage
     - python: 3.6-dev
-      env: TOX_ENV=check-py36,test-py36,coveralls-py36
+      env: TOX_ENV=py36-check,py36-test,coverage
 
 install:
   - env | sort
   - ls -alF ~/virtualenv
-  - pip install --upgrade pip setuptools tox
+  - python --version
+  - pip install --upgrade pip setuptools tox coveralls
 
 script:
   - tox -e $TOX_ENV
+  - coveralls --rcfile=tox.ini
