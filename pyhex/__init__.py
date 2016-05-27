@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
+from .functions import from_stream, from_buffer, format_stream, format_buffer, format_file
 from .hexview import HexView
-from .pyhex import from_stream, from_buffer, format_stream, format_buffer, format_file
+from .main import main
+
+__version__ = "0.4.0.dev1"
 
 __all__ = [
-    "HexView",
     "from_stream",
     "from_buffer",
     "format_stream",
     "format_buffer",
     "format_file",
+    "HexView",
+    "main",
 ]
